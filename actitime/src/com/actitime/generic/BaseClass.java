@@ -26,10 +26,10 @@ public class BaseClass {
 	Reporter.log("OpenBrowser",true);
 	driver=new ChromeDriver();
 	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 }
 @AfterClass
 public void CloseBrowser()
+
 {
 	Reporter.log("CloseBrowser",true);
 	driver.close();
@@ -44,9 +44,6 @@ public void login() throws IOException {
 	driver.get(url);
 	LoginPage l=new LoginPage(driver);
 	l.setLogin(un, pw);
-	
-	
-	
 }
 @AfterMethod
 public void logout()
